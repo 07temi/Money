@@ -13,6 +13,7 @@
 		7D3D5369289987B900CB666C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3D5368289987B900CB666C /* Preview Assets.xcassets */; };
 		7D3D536B289987B900CB666C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D536A289987B900CB666C /* Persistence.swift */; };
 		7D3D536E289987B900CB666C /* Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D536C289987B900CB666C /* Money.xcdatamodeld */; };
+		7D3D537528998D9600CB666C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537428998D9600CB666C /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7D3D5368289987B900CB666C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D3D536A289987B900CB666C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7D3D536D289987B900CB666C /* Money.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Money.xcdatamodel; sourceTree = "<group>"; };
+		7D3D537428998D9600CB666C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				7D3D536A289987B900CB666C /* Persistence.swift */,
 				7D3D536C289987B900CB666C /* Money.xcdatamodeld */,
 				7D3D5367289987B900CB666C /* Preview Content */,
+				7D3D537428998D9600CB666C /* MainScreen.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				7D3D536B289987B900CB666C /* Persistence.swift in Sources */,
 				7D3D5364289987B800CB666C /* ContentView.swift in Sources */,
+				7D3D537528998D9600CB666C /* MainScreen.swift in Sources */,
 				7D3D536E289987B900CB666C /* Money.xcdatamodeld in Sources */,
 				7D3D5362289987B800CB666C /* MoneyApp.swift in Sources */,
 			);
