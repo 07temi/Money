@@ -13,7 +13,8 @@ struct MoneyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            MainScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
