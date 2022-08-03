@@ -11,6 +11,7 @@ struct AddBalanceScreen: View {
    
     @Environment(\.dismiss) private var dismiss
     @State private var money = ""
+    @Binding var balance: Int
     
     var body: some View {
         VStack{
@@ -18,7 +19,9 @@ struct AddBalanceScreen: View {
             .keyboardType(.numberPad)
             .padding(.leading)
             Button("Сохранить") {
-                print("+count")
+                guard let sum = Int(money) else {return}
+                balance += sum
+                print("\(balance)")
                 dismiss()
             }
         }
@@ -26,8 +29,8 @@ struct AddBalanceScreen: View {
 }
 
 
-struct AddBalanceScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AddBalanceScreen()
-    }
-}
+//struct AddBalanceScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddBalanceScreen()
+//    }
+//}

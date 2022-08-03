@@ -37,7 +37,7 @@ struct MainScreen: View {
             Text("тут список трат")
         }
         .sheet(isPresented: $addBalance){
-            AddBalanceScreen()
+            AddBalanceScreen(balance: $balance)
         }
     }
 }
