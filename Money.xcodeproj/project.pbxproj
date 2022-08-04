@@ -15,6 +15,7 @@
 		7D3D536E289987B900CB666C /* Money.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D536C289987B900CB666C /* Money.xcdatamodeld */; };
 		7D3D537528998D9600CB666C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537428998D9600CB666C /* MainScreen.swift */; };
 		7D3D5377289AD05E00CB666C /* AddBalanceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */; };
+		7D3D5379289BDA6D00CB666C /* BalanceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7D3D536D289987B900CB666C /* Money.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Money.xcdatamodel; sourceTree = "<group>"; };
 		7D3D537428998D9600CB666C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceScreen.swift; sourceTree = "<group>"; };
+		7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				7D3D5367289987B900CB666C /* Preview Content */,
 				7D3D537428998D9600CB666C /* MainScreen.swift */,
 				7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */,
+				7D3D537A289BE6C400CB666C /* Demo */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -77,6 +80,14 @@
 				7D3D5368289987B900CB666C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7D3D537A289BE6C400CB666C /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 				7D3D537528998D9600CB666C /* MainScreen.swift in Sources */,
 				7D3D536E289987B900CB666C /* Money.xcdatamodeld in Sources */,
 				7D3D5362289987B800CB666C /* MoneyApp.swift in Sources */,
+				7D3D5379289BDA6D00CB666C /* BalanceFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

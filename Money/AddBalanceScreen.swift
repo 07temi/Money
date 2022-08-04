@@ -12,6 +12,7 @@ struct AddBalanceScreen: View {
     @Environment(\.dismiss) private var dismiss
     @State private var money = ""
     @Binding var balance: Int
+    let minus: Bool
     
     var body: some View {
         VStack{
@@ -20,7 +21,11 @@ struct AddBalanceScreen: View {
             .padding(.leading)
             Button("Сохранить") {
                 guard let sum = Int(money) else {return}
-                balance += sum
+                if minus {
+                    print("-")
+                } else {
+                    print("+")
+                }
                 print("\(balance)")
                 dismiss()
             }
