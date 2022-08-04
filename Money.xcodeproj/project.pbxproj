@@ -16,6 +16,7 @@
 		7D3D537528998D9600CB666C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537428998D9600CB666C /* MainScreen.swift */; };
 		7D3D5377289AD05E00CB666C /* AddBalanceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */; };
 		7D3D5379289BDA6D00CB666C /* BalanceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */; };
+		7D3D537C289C162200CB666C /* SpendplanListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537B289C162200CB666C /* SpendplanListScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		7D3D537428998D9600CB666C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceScreen.swift; sourceTree = "<group>"; };
 		7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFrame.swift; sourceTree = "<group>"; };
+		7D3D537B289C162200CB666C /* SpendplanListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendplanListScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				7D3D537428998D9600CB666C /* MainScreen.swift */,
 				7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */,
 				7D3D537A289BE6C400CB666C /* Demo */,
+				7D3D537B289C162200CB666C /* SpendplanListScreen.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				7D3D5364289987B800CB666C /* ContentView.swift in Sources */,
 				7D3D537528998D9600CB666C /* MainScreen.swift in Sources */,
 				7D3D536E289987B900CB666C /* Money.xcdatamodeld in Sources */,
+				7D3D537C289C162200CB666C /* SpendplanListScreen.swift in Sources */,
 				7D3D5362289987B800CB666C /* MoneyApp.swift in Sources */,
 				7D3D5379289BDA6D00CB666C /* BalanceFrame.swift in Sources */,
 			);

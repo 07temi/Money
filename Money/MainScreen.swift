@@ -15,7 +15,7 @@ struct MainScreen: View {
     @State private var balance = 0
     //private var date = Date()
     @State private var addBalance = false
-    @State private var minus = true
+    @State var operation = ""
     
     var body: some View {
         VStack{
@@ -34,22 +34,27 @@ struct MainScreen: View {
             Text("\(balance)")
             
             HStack{
-                Button(action: {minus = false
+                Button(action: {operation = "plus"
                                 addBalance.toggle()
                                 }) {
                         Image(systemName: "plus.circle")
                     }
                 
-                Button(action: {minus = true
+                Button(action: {operation = "minus"
                                 addBalance.toggle()
                     }) {
                     Image(systemName: "minus.circle")
                 }
             }
-            Text("тут список трат")
+            Group{
+                Section{
+            SpendplanListScreen()
+            }
+            }
+                Spacer()
         }
         .sheet(isPresented: $addBalance){
-            AddBalanceScreen(balance: $balance, minus: minus)
+            AddBalanceScreen(balance: $balance, operation: operation)
         }
     }
 }
