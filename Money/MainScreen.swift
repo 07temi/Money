@@ -47,11 +47,9 @@ struct MainScreen: View {
                 }
             }
             Group{
-                Section{
-            SpendplanListScreen()
+                SpendplanListScreen()
             }
-            }
-                Spacer()
+            Spacer()
         }
         .sheet(isPresented: $addBalance){
             AddBalanceScreen(balance: $balance, operation: operation)

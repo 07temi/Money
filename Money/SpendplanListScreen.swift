@@ -8,10 +8,27 @@
 import SwiftUI
 
 struct SpendplanListScreen: View {
-    private var spendList = [1,2,3,4,5]
+    @State var spendList = [1,2,3,4,5]
     var body: some View {
-        List(spendList, id: \.self){ spend in
-            Text("\(spend)")
+        List{
+            ForEach(spendList, id: \.self) { spend in
+                HStack{
+                    Text("\(spend)")
+                    Spacer()
+                    Image(systemName: "checkmark")
+                        .onTapGesture {
+                            print("оплата")
+                        }
+                }
+            }
+            .onDelete(perform: deleteItems)
+        }
+        .listStyle(.inset)
+    }
+    
+    func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            spendList.remove(atOffsets: offsets)
         }
     }
 }

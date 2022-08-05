@@ -17,6 +17,7 @@
 		7D3D5377289AD05E00CB666C /* AddBalanceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */; };
 		7D3D5379289BDA6D00CB666C /* BalanceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */; };
 		7D3D537C289C162200CB666C /* SpendplanListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537B289C162200CB666C /* SpendplanListScreen.swift */; };
+		7D3D537E289D346E00CB666C /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537D289D346E00CB666C /* GroupsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7D3D5376289AD05E00CB666C /* AddBalanceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceScreen.swift; sourceTree = "<group>"; };
 		7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFrame.swift; sourceTree = "<group>"; };
 		7D3D537B289C162200CB666C /* SpendplanListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendplanListScreen.swift; sourceTree = "<group>"; };
+		7D3D537D289D346E00CB666C /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7D3D5378289BDA6D00CB666C /* BalanceFrame.swift */,
+				7D3D537D289D346E00CB666C /* GroupsView.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3D537E289D346E00CB666C /* GroupsView.swift in Sources */,
 				7D3D5377289AD05E00CB666C /* AddBalanceScreen.swift in Sources */,
 				7D3D536B289987B900CB666C /* Persistence.swift in Sources */,
 				7D3D5364289987B800CB666C /* ContentView.swift in Sources */,
