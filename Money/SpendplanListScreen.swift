@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SpendplanListScreen: View {
-    @State var spendList = [1,2,3,4,5]
+    @State var spendList = ["Строка 1","Строка 2","Строка 3","Строка 4","Строка 5"]
     var body: some View {
         List{
             ForEach(spendList, id: \.self) { spend in
@@ -19,7 +19,9 @@ struct SpendplanListScreen: View {
                         .onTapGesture {
                             print("оплата")
                         }
+                        .foregroundColor(.green)
                 }
+                .listRowSeparator(.hidden)
             }
             .onDelete(perform: deleteItems)
         }

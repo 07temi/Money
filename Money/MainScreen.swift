@@ -15,6 +15,7 @@ struct MainScreen: View {
     @State private var balance = 0
     //private var date = Date()
     @State private var addBalance = false
+    @State private var addPayList = false
     @State var operation = ""
     
     var body: some View {
@@ -31,26 +32,41 @@ struct MainScreen: View {
                         .foregroundColor(.black)
                 }
             }
-            Text("\(balance)")
+            .padding(.bottom)
+            .padding(.top)
             
             HStack{
                 Button(action: {operation = "plus"
                                 addBalance.toggle()
                                 }) {
                         Image(systemName: "plus.circle")
+                                        .resizable()
+                                        .frame(width: 26, height: 26)
                     }
+                
+                Text("\(balance)")
+                    .font(.system(size: 26))
                 
                 Button(action: {operation = "minus"
                                 addBalance.toggle()
                     }) {
                     Image(systemName: "minus.circle")
+                            .resizable()
+                            .frame(width: 26, height: 26)
                 }
             }
-            Group{
+            .padding(.bottom)
+            //Group{
                 SpendplanListScreen()
-            }
+            //}
             Spacer()
+            Button("bottom button", action: {addPayList.toggle()})
+                .padding(5)
         }
+        .sheet(isPresented: $addPayList){
+            AddPayListItem()
+        }
+        
         .sheet(isPresented: $addBalance){
             AddBalanceScreen(balance: $balance, operation: operation)
         }
