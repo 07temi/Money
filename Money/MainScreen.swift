@@ -17,6 +17,7 @@ struct MainScreen: View {
     @State private var addBalance = false
     @State private var addPayList = false
     @State var operation = ""
+    @State var payList = PayList.getDemoList()
     
     var body: some View {
         VStack{
@@ -57,14 +58,14 @@ struct MainScreen: View {
             }
             .padding(.bottom)
             //Group{
-                SpendplanListScreen()
+            SpendplanListScreen(payList: $payList, balance: $balance)
             //}
             Spacer()
             Button("bottom button", action: {addPayList.toggle()})
                 .padding(5)
         }
         .sheet(isPresented: $addPayList){
-            AddPayListItem()
+            AddPayListItem(payList: $payList)
         }
         
         .sheet(isPresented: $addBalance){

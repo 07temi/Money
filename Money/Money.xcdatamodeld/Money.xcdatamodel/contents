@@ -9,6 +9,6 @@
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="MoneyToday" positionX="-63" positionY="-9" width="128" height="59"/>
+        <element name="MoneyToday" positionX="-226.869873046875" positionY="-186.1520385742188" width="128" height="73"/>
     </elements>
 </model>
