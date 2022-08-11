@@ -11,6 +11,7 @@ struct AddPayListItem: View {
     @Environment(\.dismiss) private var dismiss
     @State private var money = 0
     @State private var name = ""
+    @State private var isDone = false
     @Binding var payList: [PayList]
     
     var body: some View {
@@ -25,7 +26,7 @@ struct AddPayListItem: View {
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
             Button("Добавить", action: {
-                payList.append(PayList.init(name: name, money: money))
+                payList.append(PayList.init(name: name, money: money, isDone: isDone))
                 dismiss()
             })
             .padding(.vertical)

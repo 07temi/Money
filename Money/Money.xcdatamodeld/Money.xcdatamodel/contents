@@ -3,12 +3,25 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="money" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="journalToDate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OperationDate" inverseName="dateToJournal" inverseEntity="OperationDate"/>
+    </entity>
     <entity name="MoneyToday" representedClassName="MoneyToday" syncable="YES" codeGenerationType="class">
         <attribute name="balance" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="OperationDate" representedClassName="OperationDate" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="dateToJournal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journal" inverseName="journalToDate" inverseEntity="Journal"/>
+    </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Item" positionX="-62.2169189453125" positionY="-259.5411987304688" width="128" height="44"/>
         <element name="MoneyToday" positionX="-226.869873046875" positionY="-186.1520385742188" width="128" height="73"/>
+        <element name="Journal" positionX="18.86737060546875" positionY="89.0404052734375" width="128" height="103"/>
+        <element name="OperationDate" positionX="-256.3168334960938" positionY="40.35516357421875" width="128" height="88"/>
     </elements>
 </model>

@@ -16,6 +16,7 @@ struct MainScreen: View {
     //private var date = Date()
     @State private var addBalance = false
     @State private var addPayList = false
+    @State private var journal = false
     @State var operation = ""
     @State var payList = PayList.getDemoList()
     
@@ -57,10 +58,9 @@ struct MainScreen: View {
                 }
             }
             .padding(.bottom)
-            //Group{
             SpendplanListScreen(payList: $payList, balance: $balance)
-            //}
             Spacer()
+            Button("journal", action: {journal.toggle()})
             Button("bottom button", action: {addPayList.toggle()})
                 .padding(5)
         }
@@ -70,6 +70,10 @@ struct MainScreen: View {
         
         .sheet(isPresented: $addBalance){
             AddBalanceScreen(balance: $balance, operation: operation)
+        }
+        
+        .sheet(isPresented: $journal) {
+            JournalScreen()
         }
     }
 }
