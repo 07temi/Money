@@ -9,16 +9,16 @@ import SwiftUI
 
 struct MainScreen: View {
     
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(sortDescriptors: [])
-//    private var money: FetchedResults<MoneyToday>
-    @State private var balance = 0
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var payList: FetchedResults<PayList>
+    
+    @State private var balance: Int64 = 0
     //private var date = Date()
     @State private var addBalance = false
     @State private var addPayList = false
     @State private var journal = false
-    @State var operation = ""
-    @State var payList = PayList.getDemoList()
+    @State var plusType = true
     
     var body: some View {
         VStack{
@@ -38,7 +38,7 @@ struct MainScreen: View {
             .padding(.top)
             
             HStack{
-                Button(action: {operation = "plus"
+                Button(action: {plusType = true
                                 addBalance.toggle()
                                 }) {
                         Image(systemName: "plus.circle")
@@ -49,7 +49,7 @@ struct MainScreen: View {
                 Text("\(balance)")
                     .font(.system(size: 26))
                 
-                Button(action: {operation = "minus"
+                Button(action: {plusType = false
                                 addBalance.toggle()
                     }) {
                     Image(systemName: "minus.circle")
@@ -58,18 +58,18 @@ struct MainScreen: View {
                 }
             }
             .padding(.bottom)
-            SpendplanListScreen(payList: $payList, balance: $balance)
+            SpendplanListScreen(balance: $balance)
             Spacer()
             Button("journal", action: {journal.toggle()})
             Button("bottom button", action: {addPayList.toggle()})
                 .padding(5)
         }
         .sheet(isPresented: $addPayList){
-            AddPayListItem(payList: $payList)
+            AddPayListItem()
         }
         
         .sheet(isPresented: $addBalance){
-            AddBalanceScreen(balance: $balance, operation: operation)
+            AddBalanceScreen(balance: $balance, operation: plusType)
         }
         
         .sheet(isPresented: $journal) {

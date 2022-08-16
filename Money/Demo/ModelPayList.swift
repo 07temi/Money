@@ -5,7 +5,7 @@
 //  Created by Артем Черненко on 10.08.2022.
 //
 
-struct PayList: Decodable, Hashable {
+struct PayList1: Decodable, Hashable {
     let name: String?
     let money: Int?
     var isDone: Bool?
@@ -30,12 +30,12 @@ struct PayList: Decodable, Hashable {
         isDone = payListDemo["isDone"] as? Bool
     }
     
-    static func getDemoList() -> [PayList] {
-        [PayList(name: "Телефон", money: 890, isDone: false),
-         PayList(name: "Интернет", money: 1200, isDone: false),
-        PayList(name: "Еда коту", money: 4000, isDone: false),
-        PayList(name: "Элетричество", money: 1500, isDone: false),
-        PayList(name: "Хуичество", money: 733, isDone: false)]
+    static func getDemoList() -> [PayList1] {
+        [PayList1(name: "Телефон", money: 890, isDone: false),
+         PayList1(name: "Интернет", money: 1200, isDone: false),
+        PayList1(name: "Еда коту", money: 4000, isDone: false),
+        PayList1(name: "Элетричество", money: 1500, isDone: false),
+        PayList1(name: "Хуичество", money: 733, isDone: false)]
     }
     
 //    static func getPayList(from value: Any) -> [PayList] {

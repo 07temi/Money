@@ -11,16 +11,23 @@ struct JournalScreen: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Journal.date, ascending: true)])
+    
     private var journal: FetchedResults<Journal>
     
     var body: some View {
         //date.formatted(.dateTime.day().month().year())
         List{
-            ForEach(journal) { pay in
+            ForEach(journal, id: \.self) { pay in
                 HStack{
                     Text("\(pay.name ?? "")")
                     Spacer()
-                    Text("\(pay.money) руб")
+                    if pay.typeIsPlus {
+                        Text("+\(pay.money) руб")
+                            .foregroundColor(.green)
+                    } else {
+                        Text("-\(pay.money) руб")
+                            .foregroundColor(.red)
+                    }
                 }
             }
             .onDelete(perform: deleteItems)

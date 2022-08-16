@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct AddPayListItem: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    //private var payList: PayList
+    
     @Environment(\.dismiss) private var dismiss
-    @State private var money = 0
+    @State private var money: Int64 = 0
     @State private var name = ""
     @State private var isDone = false
-    @Binding var payList: [PayList]
     
     var body: some View {
         VStack{
@@ -25,8 +27,10 @@ struct AddPayListItem: View {
             TextField("Наименование", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
+            
             Button("Добавить", action: {
-                payList.append(PayList.init(name: name, money: money, isDone: isDone))
+                
+                addPayListItem(money: money, name: name, isDone: isDone)
                 dismiss()
             })
             .padding(.vertical)
@@ -34,6 +38,21 @@ struct AddPayListItem: View {
             Text("%Категория%")
             Text("%Признак регулярности%")
             Text("%Частота повторений%")
+        }
+    }
+    
+    private func addPayListItem(money: Int64, name: String, isDone: Bool) {
+        let newPayItem = PayList(context: viewContext)
+       
+        newPayItem.name = name
+        newPayItem.money = money
+        newPayItem.isDone = isDone
+
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Fatal error \(nsError), \(nsError.userInfo)")
         }
     }
 }

@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct SpendplanListScreen: View {
-   // @State var spendList = ["Строка 1","Строка 2","Строка 3","Строка 4","Строка 5"]
     @Environment(\.managedObjectContext) private var viewContext
-    @Binding var payList: [PayList]
-    @Binding var balance: Int
-    @State var colorState = UIColor(.green)
+    @FetchRequest(sortDescriptors: [])
+    private var payList: FetchedResults<PayList>
     
+    @Binding var balance: Int64
+    @State var colorState = UIColor(.green)
+    let currentDate = Date()
+     
     var body: some View {
         List{
             ForEach(payList, id: \.self) { spend in
                 HStack{
                     Text("\(spend.name ?? "")")
                     Spacer()
-                    Text("\(spend.money ?? 0)")
+                    Text("\(spend.money)")
                     Image(systemName: "checkmark")
                         .onTapGesture {
                             if spend.isDone != true {
-                                balance -= spend.money ?? 0
-                                addJournalItem(money: spend.money ?? 0, name: spend.name ?? "error")
-//                                spend.isDone?.toggle()
-//                                Не работает изменение признака активности
+                                balance -= spend.money
+                                addJournalItem(money: spend.money, name: spend.name ?? "error")
+                                //changeState(pay: spend)
+
                             }
                         }
                         .foregroundColor(Color(colorState))
@@ -37,23 +39,42 @@ struct SpendplanListScreen: View {
             .onDelete(perform: deleteItems)
         }
         .listStyle(.inset)
+        
+    }
+    
+    func changeState(pay: PayList){
+        pay.isDone.toggle()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Fatal error \(nsError), \(nsError.userInfo)")
+        }
     }
     
     func deleteItems(offsets: IndexSet) {
         withAnimation {
-            payList.remove(atOffsets: offsets)
+            offsets.map { payList[$0] }.forEach(viewContext.delete)
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
         }
     }
     
-    
-    private func addJournalItem(money: Int, name: String) {
+    private func addJournalItem(money: Int64, name: String) {
         let newJournal = Journal(context: viewContext)
-        
-        newJournal.date = Date()
+       
         newJournal.name = name
         newJournal.money = Int64(money)
-//        newJournal.dateToJournal = operationDate
-//        viewContext.refreshAllObjects()
+        newJournal.date = Date()
+        newJournal.typeIsPlus = false
+
+        //        newJournal.journalToDate = currentDate
+        //        viewContext.refreshAllObjects()
         do {
             try viewContext.save()
         } catch {
