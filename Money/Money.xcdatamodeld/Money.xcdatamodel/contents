@@ -14,7 +14,7 @@
         <attribute name="balance" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="PayList" representedClassName="PayList" syncable="YES" codeGenerationType="class">
+    <entity name="PayList" representedClassName="PayList" syncable="YES">
         <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="money" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -27,7 +27,7 @@
         <element name="Item" positionX="-62.2169189453125" positionY="-259.5411987304688" width="128" height="44"/>
         <element name="Journal" positionX="-186.2601928710938" positionY="-66.760986328125" width="128" height="104"/>
         <element name="MoneyToday" positionX="-366.4262084960938" positionY="-182.8011169433594" width="128" height="73"/>
-        <element name="PayList" positionX="-185.3192749023438" positionY="-180.7489624023438" width="128" height="74"/>
-        <element name="PayToday" positionX="-403.0568237304688" positionY="-22.61526489257812" width="128" height="73"/>
+        <element name="PayList" positionX="-185.3192749023438" positionY="-180.7489624023438" width="128" height="88"/>
+        <element name="PayToday" positionX="-506.9497680664063" positionY="-48.96115112304688" width="128" height="73"/>
     </elements>
 </model>

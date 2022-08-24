@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ActivePaysToday: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var payList: FetchedResults<PayList>
+    
+    var pays: [PayList] { return
+        payList.filter { pay in
+            pay.isDone == false
+        }
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            ForEach(pays) { pay in
+                Text("\(pay.name ?? "")")
+            }
+        }
     }
 }
 

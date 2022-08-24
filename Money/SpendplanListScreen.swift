@@ -28,7 +28,7 @@ struct SpendplanListScreen: View {
                             if spend.isDone != true {
                                 balance -= spend.money
                                 addJournalItem(money: spend.money, name: spend.name ?? "error")
-                                //changeState(pay: spend)
+                                changeState(pay: spend)
 
                             }
                         }
