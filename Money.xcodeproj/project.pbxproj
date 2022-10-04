@@ -21,8 +21,6 @@
 		7D3D538028A2887D00CB666C /* AddPayListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D537F28A2887D00CB666C /* AddPayListItem.swift */; };
 		7D3D538428A4DD3200CB666C /* JournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D538328A4DD3200CB666C /* JournalScreen.swift */; };
 		7D6443A728ACFA660011A376 /* ActivePaysToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6443A628ACFA660011A376 /* ActivePaysToday.swift */; };
-		7DA65FB328B63AB1000EA64F /* PayList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA65FB128B63AB1000EA64F /* PayList+CoreDataClass.swift */; };
-		7DA65FB428B63AB1000EA64F /* PayList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA65FB228B63AB1000EA64F /* PayList+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +39,6 @@
 		7D3D537F28A2887D00CB666C /* AddPayListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPayListItem.swift; sourceTree = "<group>"; };
 		7D3D538328A4DD3200CB666C /* JournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalScreen.swift; sourceTree = "<group>"; };
 		7D6443A628ACFA660011A376 /* ActivePaysToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePaysToday.swift; sourceTree = "<group>"; };
-		7DA65FB128B63AB1000EA64F /* PayList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayList+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		7DA65FB228B63AB1000EA64F /* PayList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayList+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +71,6 @@
 		7D3D5360289987B800CB666C /* Money */ = {
 			isa = PBXGroup;
 			children = (
-				7DA65FB128B63AB1000EA64F /* PayList+CoreDataClass.swift */,
-				7DA65FB228B63AB1000EA64F /* PayList+CoreDataProperties.swift */,
 				7D3D5361289987B800CB666C /* MoneyApp.swift */,
 				7D3D5363289987B800CB666C /* ContentView.swift */,
 				7D3D5365289987B900CB666C /* Assets.xcassets */,
@@ -181,7 +175,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA65FB428B63AB1000EA64F /* PayList+CoreDataProperties.swift in Sources */,
 				7D3D537E289D346E00CB666C /* GroupsView.swift in Sources */,
 				7D3D5377289AD05E00CB666C /* AddBalanceScreen.swift in Sources */,
 				7D3D536B289987B900CB666C /* Persistence.swift in Sources */,
@@ -191,7 +184,6 @@
 				7D6443A728ACFA660011A376 /* ActivePaysToday.swift in Sources */,
 				7D3D537C289C162200CB666C /* SpendplanListScreen.swift in Sources */,
 				7D3D5362289987B800CB666C /* MoneyApp.swift in Sources */,
-				7DA65FB328B63AB1000EA64F /* PayList+CoreDataClass.swift in Sources */,
 				7D3D5379289BDA6D00CB666C /* BalanceFrame.swift in Sources */,
 				7D3D538428A4DD3200CB666C /* JournalScreen.swift in Sources */,
 				7D3D538028A2887D00CB666C /* AddPayListItem.swift in Sources */,

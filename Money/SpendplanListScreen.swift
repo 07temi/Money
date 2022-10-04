@@ -29,7 +29,6 @@ struct SpendplanListScreen: View {
                                 balance -= spend.money
                                 addJournalItem(money: spend.money, name: spend.name ?? "error")
                                 changeState(pay: spend)
-
                             }
                         }
                         .foregroundColor(Color(colorState))

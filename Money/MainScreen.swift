@@ -64,10 +64,10 @@ struct MainScreen: View {
             SpendplanListScreen(balance: $balance)
             Spacer()
             //temp
-            Button("PayToday", action: {payToday.toggle()})
+            Button("Оплаты сегодня", action: {payToday.toggle()})
             //****************
-            Button("journal", action: {journal.toggle()})
-            Button("bottom button", action: {addPayList.toggle()})
+            Button("Журнал", action: {journal.toggle()})
+            Button("Запланировать расход", action: {addPayList.toggle()})
                 .padding(5)
         }
         .sheet(isPresented: $addPayList){
