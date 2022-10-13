@@ -77,6 +77,10 @@ struct MainScreen: View {
             PlusBalanceScreen(balance: $balance)
         }
         
+        .sheet(isPresented: $minusBalance){
+            MinusBalanceScreen(balance: $balance)
+        }
+        
         .sheet(isPresented: $journal) {
             JournalScreen()
         }
