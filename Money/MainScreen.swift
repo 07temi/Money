@@ -15,13 +15,14 @@ struct MainScreen: View {
     
     @State private var balance: Int64 = 0
     //private var date = Date()
-    @State private var addBalance = false
+    @State private var plusBalance = false
+    @State private var minusBalance = false
     @State private var addPayList = false
     @State private var journal = false
     //temp
     @State private var payToday = false
     //*************
-    @State var plusType = true
+    @State var plusType = false
     
     var body: some View {
         VStack{
@@ -41,8 +42,7 @@ struct MainScreen: View {
             .padding(.top)
             
             HStack{
-                Button(action: {plusType = true
-                                addBalance.toggle()
+                Button(action: {plusBalance.toggle()
                                 }) {
                         Image(systemName: "plus.circle")
                                         .resizable()
@@ -52,8 +52,7 @@ struct MainScreen: View {
                 Text("\(balance)")
                     .font(.system(size: 26))
                 
-                Button(action: {plusType = false
-                                addBalance.toggle()
+                Button(action: {minusBalance.toggle()
                     }) {
                     Image(systemName: "minus.circle")
                             .resizable()
@@ -74,8 +73,8 @@ struct MainScreen: View {
             AddPayListItem()
         }
         
-        .sheet(isPresented: $addBalance){
-            AddBalanceScreen(balance: $balance, operation: plusType)
+        .sheet(isPresented: $plusBalance){
+            PlusBalanceScreen(balance: $balance)
         }
         
         .sheet(isPresented: $journal) {

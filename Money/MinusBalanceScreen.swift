@@ -1,23 +1,22 @@
 //
-//  AddBalanceScreen.swift
+//  MinusBalanceScreen.swift
 //  Money
 //
-//  Created by Артем Черненко on 03.08.2022.
+//  Created by Артем Черненко on 13.10.2022.
 //
 
 import SwiftUI
 
-struct AddBalanceScreen: View {
+struct MinusBalanceScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
     @State private var money = ""
     @State private var name = ""
     @Binding var balance: Int64
-    @State var operation: Bool
     
     var body: some View {
         VStack{
-            Text(operation ? "Пополнить" : "Потратить")
+            Text("Потратить")
             TextField("Название", text: $name)
                 .padding()
                 .textFieldStyle(.roundedBorder)
@@ -27,13 +26,8 @@ struct AddBalanceScreen: View {
                 .textFieldStyle(.roundedBorder)
             Button("Сохранить") {
                 guard let sum = Int64(money) else {return}
-                if operation {
-                    balance += sum
-                    addJournalItem(money: sum, name: name, typePlus: true)
-                } else {
-                    balance -= sum
-                    addJournalItem(money: sum, name: name, typePlus: false)
-                }
+                balance -= sum
+                addJournalItem(money: sum, name: name, typePlus: true)
                 dismiss()
             }
             .padding(.vertical)
@@ -57,9 +51,3 @@ struct AddBalanceScreen: View {
     }
 }
 
-
-//struct AddBalanceScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddBalanceScreen()
-//    }
-//}
