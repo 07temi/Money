@@ -13,7 +13,7 @@ struct MainScreen: View {
     @FetchRequest(sortDescriptors: [])
     private var payList: FetchedResults<PayList>
     
-    @State private var balance: Int64 = 0
+    @State private var balance = Int64( UserDefaults.standard.integer(forKey: "Balance"))
     //private var date = Date()
     @State private var plusBalance = false
     @State private var minusBalance = false
@@ -27,16 +27,16 @@ struct MainScreen: View {
     var body: some View {
         VStack{
             HStack{
-                Button(action: {}) {
-                    Image(systemName: "arrowtriangle.left")
-                        .foregroundColor(.black)
-                }
+//                Button(action: {}) {
+//                    Image(systemName: "arrowtriangle.left")
+//                        .foregroundColor(.black)
+//                }
                 
                 Text("Тут дата!")
-                Button(action: {}) {
-                    Image(systemName: "arrowtriangle.right")
-                        .foregroundColor(.black)
-                }
+//                Button(action: {}) {
+//                    Image(systemName: "arrowtriangle.right")
+//                        .foregroundColor(.black)
+//                }
             }
             .padding(.bottom)
             .padding(.top)
@@ -51,6 +51,9 @@ struct MainScreen: View {
                 
                 Text("\(balance)")
                     .font(.system(size: 26))
+                    .onTapGesture {
+                        journal.toggle()
+                    }
                 
                 Button(action: {minusBalance.toggle()
                     }) {

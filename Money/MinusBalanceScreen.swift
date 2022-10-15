@@ -27,7 +27,8 @@ struct MinusBalanceScreen: View {
             Button("Сохранить") {
                 guard let sum = Int64(money) else {return}
                 balance -= sum
-                addJournalItem(money: sum, name: name, typePlus: true)
+                addJournalItem(money: sum, name: name, typePlus: false)
+                UserDefaults.standard.set(balance, forKey: "Balance")
                 dismiss()
             }
             .padding(.vertical)

@@ -28,6 +28,7 @@ struct PlusBalanceScreen: View {
                 guard let sum = Int64(money) else {return}
                 balance += sum
                 addJournalItem(money: sum, name: name, typePlus: true)
+                UserDefaults.standard.set(balance, forKey: "Balance")
                 dismiss()
             }
             .padding(.vertical)

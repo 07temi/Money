@@ -14,6 +14,7 @@ struct SpendplanListScreen: View {
     
     @Binding var balance: Int64
     @State var colorState = UIColor(.green)
+
     let currentDate = Date()
      
     var body: some View {
@@ -23,6 +24,7 @@ struct SpendplanListScreen: View {
                     Text("\(spend.name ?? "")")
                     Spacer()
                     Text("\(spend.money)")
+
                     Image(systemName: "checkmark")
                         .onTapGesture {
                             if spend.isDone != true {
