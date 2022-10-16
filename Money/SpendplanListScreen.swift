@@ -25,9 +25,9 @@ struct SpendplanListScreen: View {
                     Spacer()
                     Text("\(spend.money)")
 
-                    Image(systemName: "checkmark")
+                    Image(systemName: setStatusPicture(state: spend.isDone))
                         .onTapGesture {
-                            if spend.isDone != true {
+                            if spend.isDone == false {
                                 balance -= spend.money
                                 addJournalItem(money: spend.money, name: spend.name ?? "error")
                                 changeState(pay: spend)
@@ -82,6 +82,16 @@ struct SpendplanListScreen: View {
             let nsError = error as NSError
             fatalError("Fatal error \(nsError), \(nsError.userInfo)")
         }
+    }
+    
+    private func setStatusPicture(state: Bool) -> String {
+        var stateString = ""
+        if state {
+            stateString = "checkmark"
+        } else {
+            stateString = "square"
+        }
+        return stateString
     }
 }
 
