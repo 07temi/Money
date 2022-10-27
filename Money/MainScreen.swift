@@ -65,12 +65,42 @@ struct MainScreen: View {
             .padding(.bottom)
             SpendplanListScreen(balance: $balance)
             Spacer()
-            //temp
-            Button("Оплаты сегодня", action: {payToday.toggle()})
-            //****************
-            Button("Журнал", action: {journal.toggle()})
-            Button("Запланировать расход", action: {addPayList.toggle()})
-                .padding(5)
+            
+            HStack{
+                //журнал
+                //Button("Журнал", action: {journal.toggle()})
+                Image(systemName: "checklist")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .onTapGesture {
+                        journal.toggle()
+                    }
+                    .padding()
+                    .foregroundColor(.blue)
+                
+                //запланировать
+                Image(systemName: "text.badge.plus")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .onTapGesture {
+                        addPayList.toggle()
+                    }
+                    .padding(.horizontal, 50)
+                    .foregroundColor(.blue)
+                
+                //на сегодня
+                //Button("Оплаты сегодня", action: {payToday.toggle()})
+                Image(systemName: "clock.badge.exclamationmark")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .onTapGesture {
+                        payToday.toggle()
+                    }
+                    .padding()
+                    .foregroundColor(.blue)
+            }
+//            Button("Запланировать расход", action: {addPayList.toggle()})
+//                .padding(5)
         }
         .sheet(isPresented: $addPayList){
             AddPayListItem()
