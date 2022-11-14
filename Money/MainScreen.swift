@@ -70,33 +70,38 @@ struct MainScreen: View {
                 //журнал
                 //Button("Журнал", action: {journal.toggle()})
                 Image(systemName: "checklist")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+                    //.resizable()
+                    .clipShape(Rectangle())
+                    .frame(width: 90, height: 30)
                     .onTapGesture {
                         journal.toggle()
                     }
                     .padding()
+                    .background(Color .green)
                     .foregroundColor(.blue)
-                
+
                 //запланировать
                 Image(systemName: "text.badge.plus")
-                    .resizable()
-                    .frame(width: 50, height: 50)
+                    //.resizable()
+                    .clipShape(Rectangle())
+                    .frame(width: 40, height: 50)
                     .onTapGesture {
                         addPayList.toggle()
                     }
                     .padding(.horizontal, 50)
                     .foregroundColor(.blue)
-                
+
                 //на сегодня
                 //Button("Оплаты сегодня", action: {payToday.toggle()})
                 Image(systemName: "clock.badge.exclamationmark")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+                    //.resizable()
+                    .clipShape(Rectangle())
+                    .frame(width: 90, height: 30)
                     .onTapGesture {
                         payToday.toggle()
                     }
                     .padding()
+                    .background(Color .red)
                     .foregroundColor(.blue)
             }
 //            Button("Запланировать расход", action: {addPayList.toggle()})
@@ -121,7 +126,6 @@ struct MainScreen: View {
         .sheet(isPresented: $payToday) {
             ActivePaysToday()
         }
-        //hhhhhhhhhh
     }
 }
 
