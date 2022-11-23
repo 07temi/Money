@@ -107,9 +107,6 @@ struct MainScreen: View {
 //            Button("Запланировать расход", action: {addPayList.toggle()})
 //                .padding(5)
         }
-        .sheet(isPresented: $addPayList){
-            AddPayListItem()
-        }
         
         .sheet(isPresented: $plusBalance){
             PlusBalanceScreen(balance: $balance)
@@ -126,7 +123,18 @@ struct MainScreen: View {
         .sheet(isPresented: $payToday) {
             ActivePaysToday()
         }
+        
+        .sheet(isPresented: $addPayList){
+            AddPayListItem()
+        }
+        
     }
+}
+
+struct ExpandButton: Identifiable {
+    let id = UUID()
+    let label: String
+    private (set) var action: (() -> Void)? = nil
 }
 
 struct MainScreen_Previews: PreviewProvider {
