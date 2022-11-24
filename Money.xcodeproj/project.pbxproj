@@ -22,6 +22,7 @@
 		7D3D538428A4DD3200CB666C /* JournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D538328A4DD3200CB666C /* JournalScreen.swift */; };
 		7D6443A728ACFA660011A376 /* ActivePaysToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6443A628ACFA660011A376 /* ActivePaysToday.swift */; };
 		7DC1A31528F8449500112692 /* MinusBalanceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC1A31428F8449400112692 /* MinusBalanceScreen.swift */; };
+		7DEDC1DE292F6DE1006AB739 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDC1DD292F6DE1006AB739 /* ExpandButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		7D3D538328A4DD3200CB666C /* JournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalScreen.swift; sourceTree = "<group>"; };
 		7D6443A628ACFA660011A376 /* ActivePaysToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePaysToday.swift; sourceTree = "<group>"; };
 		7DC1A31428F8449400112692 /* MinusBalanceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusBalanceScreen.swift; sourceTree = "<group>"; };
+		7DEDC1DD292F6DE1006AB739 /* ExpandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				7D3D537A289BE6C400CB666C /* Demo */,
 				7D3D537B289C162200CB666C /* SpendplanListScreen.swift */,
 				7D6443A628ACFA660011A376 /* ActivePaysToday.swift */,
+				7DEDC1DD292F6DE1006AB739 /* ExpandButton.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				7D3D536B289987B900CB666C /* Persistence.swift in Sources */,
 				7D3D5364289987B800CB666C /* ContentView.swift in Sources */,
 				7D3D537528998D9600CB666C /* MainScreen.swift in Sources */,
+				7DEDC1DE292F6DE1006AB739 /* ExpandButton.swift in Sources */,
 				7D3D536E289987B900CB666C /* Money.xcdatamodeld in Sources */,
 				7DC1A31528F8449500112692 /* MinusBalanceScreen.swift in Sources */,
 				7D6443A728ACFA660011A376 /* ActivePaysToday.swift in Sources */,
