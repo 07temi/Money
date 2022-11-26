@@ -26,28 +26,19 @@ struct MainScreen: View {
     
     var body: some View {
         VStack{
-            HStack{
-//                Button(action: {}) {
-//                    Image(systemName: "arrowtriangle.left")
-//                        .foregroundColor(.black)
-//                }
-                
+            HStack {
                 Text("Тут дата!")
-//                Button(action: {}) {
-//                    Image(systemName: "arrowtriangle.right")
-//                        .foregroundColor(.black)
-//                }
             }
             .padding(.bottom)
             .padding(.top)
             
             HStack{
                 Button(action: {plusBalance.toggle()
-                                }) {
-                        Image(systemName: "plus.circle")
-                                        .resizable()
-                                        .frame(width: 26, height: 26)
-                    }
+                }) {
+                    Image(systemName: "plus.circle")
+                        .resizable()
+                        .frame(width: 26, height: 26)
+                }
                 
                 Text("\(balance)")
                     .font(.system(size: 26))
@@ -56,10 +47,10 @@ struct MainScreen: View {
                     }
                 
                 Button(action: {minusBalance.toggle()
-                    }) {
+                }) {
                     Image(systemName: "minus.circle")
-                            .resizable()
-                            .frame(width: 26, height: 26)
+                        .resizable()
+                        .frame(width: 26, height: 26)
                 }
             }
             .padding(.bottom)
@@ -67,54 +58,34 @@ struct MainScreen: View {
             Spacer()
             
             HStack{
-                //журнал
-                //Button("Журнал", action: {journal.toggle()})
-//                Image(systemName: "checklist")
-//                    //.resizable()
-//                    .clipShape(Rectangle())
-//                    .frame(width: 90, height: 30)
-//                    .onTapGesture {
-//                        journal.toggle()
-//                    }
-//                    .padding()
-//                    .background(Color .green)
-//                    .foregroundColor(.blue)
-
-                //запланировать
-//                Image(systemName: "text.badge.plus")
-//                    //.resizable()
-//                    .clipShape(Rectangle())
-//                    .frame(width: 40, height: 50)
-//                    .onTapGesture {
-//                        addPayList.toggle()
-//                    }
-//                    .padding(.horizontal, 50)
-//                    .foregroundColor(.blue)
-
-                //на сегодня
-                //Button("Оплаты сегодня", action: {payToday.toggle()})
-//                Image(systemName: "clock.badge.exclamationmark")
-//                    //.resizable()
-//                    .clipShape(Rectangle())
-//                    .frame(width: 90, height: 30)
-//                    .onTapGesture {
-//                        payToday.toggle()
-//                    }
-//                    .padding()
-//                    .background(Color .red)
-//                    .foregroundColor(.blue)
                 Spacer()
-                ExpandableButtonPanel(
-                  primaryItem: ExpandableButtonItem(label: Image(systemName: "checkmark")), // No action
-                  secondaryItems: [
-                    ExpandableButtonItem(label: Image(systemName: "checkmark")),
-                    ExpandableButtonItem(label: Image(systemName: "checkmark"))
-                  ]
-                )
+                ExpandableButtonPanel(primaryItem: ExpandableButtonItem(label: "➕"), secondaryItems: [
+                    ExpandableButtonItem(label: "📝") {
+                        journal.toggle()
+                    },
+                    ExpandableButtonItem(label: "📆") {
+                        payToday.toggle()
+                    },
+                    ExpandableButtonItem(label: "💸") {
+                        addPayList.toggle()
+                    }
+                ])
                 .padding()
+//                Spacer()
+//                ExpandableButtonPanel(
+//                    primaryItem: ExpandableButtonItem(label: Image(systemName: "ellipsis")), // No action
+//                    secondaryItems: [
+//                        ExpandableButtonItem(label: Image(systemName: "book"))
+//                        {journal.toggle()},
+//                        ExpandableButtonItem(label: Image(systemName: "calendar"))
+//                        {payToday.toggle()},
+//                        ExpandableButtonItem(label: Image(systemName: "plus.circle"))
+//                        {addPayList.toggle()}
+//                    ]
+//                )
+//                .padding()
             }
-//            Button("Запланировать расход", action: {addPayList.toggle()})
-//                .padding(5)
+            .padding(5)
         }
         
         .sheet(isPresented: $plusBalance){
