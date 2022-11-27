@@ -59,14 +59,14 @@ struct MainScreen: View {
             
             HStack{
                 Spacer()
-                ExpandableButtonPanel(primaryItem: ExpandableButtonItem(label: "➕"), secondaryItems: [
-                    ExpandableButtonItem(label: "📝") {
+                ExpandableButtonPanel(primaryItem: ExpandableButtonItem(label: Text("➕").font(.system(size: 40))), secondaryItems: [
+                    ExpandableButtonItem(label: Text("📝").font(.system(size: 40))) {
                         journal.toggle()
                     },
-                    ExpandableButtonItem(label: "📆") {
+                    ExpandableButtonItem(label: Text("📆").font(.system(size: 40))) {
                         payToday.toggle()
                     },
-                    ExpandableButtonItem(label: "💸") {
+                    ExpandableButtonItem(label: Text("💸").font(.system(size: 40))) {
                         addPayList.toggle()
                     }
                 ])
