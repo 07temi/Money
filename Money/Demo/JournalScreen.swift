@@ -16,24 +16,29 @@ struct JournalScreen: View {
     
     var body: some View {
         //date.formatted(.dateTime.day().month().year())
-        List{
-            ForEach(journal, id: \.self) { pay in
-                HStack{
-                    Text("\(pay.name ?? "")")
-                    Spacer()
-                    if pay.typeIsPlus {
-                        Text("+\(pay.money) руб")
-                            .foregroundColor(.green)
-                    } else {
-                        Text("-\(pay.money) руб")
-                            .foregroundColor(.red)
+        VStack {
+            Text("Журнал операций")
+                .font(.system(size: 30))
+            List {
+                ForEach(journal, id: \.self) { pay in
+                    HStack{
+                        Text("\(pay.name ?? "")")
+                        Spacer()
+                        if pay.typeIsPlus {
+                            Text("+\(pay.money) руб")
+                                .foregroundColor(.green)
+                        } else {
+                            Text("-\(pay.money) руб")
+                                .foregroundColor(.red)
+                        }
                     }
                 }
+                .onDelete(perform: deleteItems)
             }
-            .onDelete(perform: deleteItems)
-        }
-        .listStyle(.inset)
+            .listStyle(.inset)
+        } .padding(.top)
     }
+        
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {

@@ -71,19 +71,6 @@ struct MainScreen: View {
                     }
                 ])
                 .padding()
-//                Spacer()
-//                ExpandableButtonPanel(
-//                    primaryItem: ExpandableButtonItem(label: Image(systemName: "ellipsis")), // No action
-//                    secondaryItems: [
-//                        ExpandableButtonItem(label: Image(systemName: "book"))
-//                        {journal.toggle()},
-//                        ExpandableButtonItem(label: Image(systemName: "calendar"))
-//                        {payToday.toggle()},
-//                        ExpandableButtonItem(label: Image(systemName: "plus.circle"))
-//                        {addPayList.toggle()}
-//                    ]
-//                )
-//                .padding()
             }
             .padding(5)
         }

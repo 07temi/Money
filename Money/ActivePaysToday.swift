@@ -12,6 +12,13 @@ struct ActivePaysToday: View {
     @FetchRequest(sortDescriptors: [])
     private var payList: FetchedResults<PayList>
     
+    let currentDate = Date.now
+    var shortDate: String {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yyyy"
+        return df.string(from: currentDate)
+    }
+    
     var pays: [PayList] { return
         payList.filter { pay in
             pay.isDone == false
@@ -20,7 +27,7 @@ struct ActivePaysToday: View {
     var body: some View {
         List{
             ForEach(pays) { pay in
-                Text("\(pay.name ?? "")")
+                Text("\(pay.name ?? "") \(shortDate)")
             }
         }
     }

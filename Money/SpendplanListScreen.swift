@@ -15,7 +15,8 @@ struct SpendplanListScreen: View {
     @Binding var balance: Int64
     @State var colorState = UIColor(.green)
 
-    let currentDate = Date()
+    //let currentDate = Date.now
+    
      
     var body: some View {
         List{
