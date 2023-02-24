@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct DateFrame: View {
+    let currentDate = Date.now
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Сегодня")
+            HStack{
+                Text("24")
+                Text("Февраля")
+                Text("\(getMonthName())")
+            }
+        }
+    }
+    
+    private func getMonthName() -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "LLLL"
+//        let monthString = dateFormatter.string(from: currentDate)
+//        return monthString
+
     }
 }
 
