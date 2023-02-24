@@ -27,7 +27,11 @@ struct ActivePaysToday: View {
     var body: some View {
         List{
             ForEach(pays) { pay in
-                Text("\(pay.name ?? "") \(shortDate)")
+                HStack{
+                    Text("\(pay.name ?? "")")
+                    Spacer()
+                    Text("\(shortDate)")
+                }
             }
         }
     }
