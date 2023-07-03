@@ -22,11 +22,11 @@ struct DateFrame: View {
     }
     
     private func getMonthName() -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "LLLL"
-//        let monthString = dateFormatter.string(from: currentDate)
-//        return monthString
-
+        //        let dateFormatter = DateFormatter()
+        //        dateFormatter.dateFormat = "LLLL"
+        //        let monthString = dateFormatter.string(from: currentDate)
+        //        return monthString
+        return "month"
     }
 }
 
