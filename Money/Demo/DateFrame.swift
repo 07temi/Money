@@ -15,20 +15,27 @@ struct DateFrame: View {
             Text("Сегодня:")
                 .padding(.leading)
             HStack{
-                Text("\(getMonthName())")
+                VStack{
+                    Text("\(getMonthName().dName)")
+                        .padding(.leading)
+                    Text("\(getMonthName().mName)")
+                        .padding(.leading)
                     //.font(.title2)
+                }
             }
         }
     }
     
-    private func getMonthName() -> String {
+    private func getMonthName() -> (mName: String, dName: String) {
         var monthName = ""
+        var dayName = ""
         let myCalendar = Calendar(identifier: .gregorian)
-        let components = myCalendar.dateComponents([.day, .month], from: Date())
-        let dayNumber = components.day
+        let components = myCalendar.dateComponents([.day, .month, .weekday], from: Date())
+        let dateDay = components.day
         let monthNumber = components.month
+        let dayWeekNumber = components.weekday
         
-        monthName = "\(dayNumber ?? 00)"
+        monthName = "\(dateDay ?? 00)"
         
         switch monthNumber {
         case 1: monthName += " Января"
@@ -46,7 +53,20 @@ struct DateFrame: View {
         default:
             monthName = "error"
         }
-        return monthName
+                
+        switch dayWeekNumber {
+        case 2: dayName = "Понедельник"
+        case 3: dayName = "Вторник"
+        case 4: dayName = "Среда"
+        case 5: dayName = "Четверг"
+        case 6: dayName = "Пятница"
+        case 7: dayName = "Суббота"
+        case 1: dayName = "Воскресенье"
+        default:
+            monthName = "error"
+        }
+        
+        return (monthName, dayName)
     }
 }
 
