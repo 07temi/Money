@@ -29,6 +29,7 @@ struct PlusBalanceScreen: View {
                 balance += sum
                 addJournalItem(money: sum, name: name, typePlus: true)
                 UserDefaults.standard.set(balance, forKey: "Balance")
+                UserDefaults.standard.set(getAverage(balance: Int(balance)), forKey: "Average")
                 dismiss()
             }
             .padding(.vertical)
@@ -49,6 +50,14 @@ struct PlusBalanceScreen: View {
             let nsError = error as NSError
             fatalError("Fatal error \(nsError), \(nsError.userInfo)")
         }
+    }
+    
+    private func getAverage(balance: Int) -> Int {
+        let myCalendar = Calendar(identifier: .gregorian)
+        let components = myCalendar.dateComponents([.month], from: Date())
+        let monthNumber = components.month ?? 0
+        
+        return balance / monthNumber
     }
 }
 

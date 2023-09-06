@@ -14,7 +14,8 @@ struct MainScreen: View {
     private var payList: FetchedResults<PayList>
     
     @State private var balance = Int64( UserDefaults.standard.integer(forKey: "Balance"))
-    //private var date = Date()
+    @State private var average = UserDefaults.standard.integer(forKey: "Average")
+    
     @State private var plusBalance = false
     @State private var minusBalance = false
     @State private var addPayList = false
@@ -28,6 +29,7 @@ struct MainScreen: View {
         VStack{
             HStack {
                 Text("Тут дата!")
+                Text("\(average)")
             }
             .padding(.bottom)
             .padding(.top)
