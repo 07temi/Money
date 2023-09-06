@@ -27,8 +27,8 @@ struct MainScreen: View {
     
     var body: some View {
         VStack{
-            HStack {
-                Text("Тут дата!")
+            HStack{
+                DateFrame()
                 Text("\(average)")
             }
             .padding(.bottom)
