@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlusBalanceScreen: View {
+    @EnvironmentObject var average2: AverageValue //только чтение
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
     @State private var money = ""

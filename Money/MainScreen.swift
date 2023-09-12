@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+class AverageValue: ObservableObject {
+    @Published var average = UserDefaults.standard.integer(forKey: "Average")
+}
+
 struct MainScreen: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [])
-    private var payList: FetchedResults<PayList>
+//    @Environment(\.managedObjectContext) private var viewContext
+//    @FetchRequest(sortDescriptors: [])
+//    private var payList: FetchedResults<PayList>
+    @StateObject var average1 = AverageValue()
     
     @State private var balance = Int64( UserDefaults.standard.integer(forKey: "Balance"))
     @State private var average = UserDefaults.standard.integer(forKey: "Average")
@@ -29,7 +34,8 @@ struct MainScreen: View {
         VStack{
             HStack{
                 DateFrame()
-                Text("\(average)")
+                Text("average = \(average)")
+                Text("average1 = \(average1.average)")
             }
             .padding(.bottom)
             .padding(.top)
@@ -56,7 +62,7 @@ struct MainScreen: View {
                 }
             }
             .padding(.bottom)
-            SpendplanListScreen(balance: $balance)
+ //           SpendplanListScreen(balance: $balance)
             Spacer()
             
             HStack{
