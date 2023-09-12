@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct PlusBalanceScreen: View {
-    @EnvironmentObject var average2: AverageValue //только чтение
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
     @State private var money = ""
     @State private var name = ""
     @Binding var balance: Int64
+    //наблюдаем за классом
+    @ObservedObject var average: StatisticValues
     
     var body: some View {
         VStack{
@@ -29,8 +30,11 @@ struct PlusBalanceScreen: View {
                 guard let sum = Int64(money) else {return}
                 balance += sum
                 addJournalItem(money: sum, name: name, typePlus: true)
+                //сохраняем данные в юзердефолтс
                 UserDefaults.standard.set(balance, forKey: "Balance")
                 UserDefaults.standard.set(getAverage(balance: Int(balance)), forKey: "Average")
+                //вносим значение в наблюдаемую переменную класса
+                average.average = getAverage(balance: Int(balance))
                 dismiss()
             }
             .padding(.vertical)

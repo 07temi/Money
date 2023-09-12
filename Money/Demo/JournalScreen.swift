@@ -10,7 +10,7 @@ import SwiftUI
 struct JournalScreen: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Journal.date, ascending: true)])
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Journal.date, ascending: false)])
     
     private var journal: FetchedResults<Journal>
     

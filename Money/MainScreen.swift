@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-class AverageValue: ObservableObject {
-    @Published var average = UserDefaults.standard.integer(forKey: "Average")
+class StatisticValues: ObservableObject {
+    @Published var average =
+    UserDefaults.standard.integer(forKey: "Average")
 }
 
 struct MainScreen: View {
@@ -16,7 +17,6 @@ struct MainScreen: View {
 //    @Environment(\.managedObjectContext) private var viewContext
 //    @FetchRequest(sortDescriptors: [])
 //    private var payList: FetchedResults<PayList>
-    @StateObject var average1 = AverageValue()
     
     @State private var balance = Int64( UserDefaults.standard.integer(forKey: "Balance"))
     @State private var average = UserDefaults.standard.integer(forKey: "Average")
@@ -29,13 +29,14 @@ struct MainScreen: View {
     @State private var payToday = false
     //*************
     @State var plusType = false
+    //Инициализируем изменяемый класс - изменяем в plusBalance
+    @StateObject var averageValue = StatisticValues()
     
     var body: some View {
         VStack{
             HStack{
                 DateFrame()
-                Text("average = \(average)")
-                Text("average1 = \(average1.average)")
+                Text("Средний доход: \(averageValue.average)")
             }
             .padding(.bottom)
             .padding(.top)
@@ -84,7 +85,7 @@ struct MainScreen: View {
         }
         
         .sheet(isPresented: $plusBalance){
-            PlusBalanceScreen(balance: $balance)
+            PlusBalanceScreen(balance: $balance, average: averageValue)
         }
         
         .sheet(isPresented: $minusBalance){
